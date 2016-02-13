@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/JSXTransformer.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>-->
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+    var testb = 10;
+
+    var ClickCounterButton =React.createClass({
+
+        render: function (){
+
+            return  <button onClick={this.props.handler}>Don't click me!</button>
+
+
+        }
+
+    })
+
+    var Counter =React.createClass({
+
+        render: function (){
+
+            return  <span> clicked {this.props.value} times.</span>
+
+
+        }
+
+    })
+
+
+        var Content =React.createClass({
+
+        getInitialState: function(){
+          return {counter:0}
+        },
+
+
+        click: function(e){
+          this.setState({counter: ++this.state.counter})
+        },
+
+        render: function (){
+
+            return(
+                    <div>
+                 <ClickCounterButton    handler = {this.click} />
+                        <br/>
+                        <Counter value ={this.state.counter}/>
+                    </div>
+            );
+        }
+    })
+
+    React.render(
+
+            <Content />,
+            document.getElementById("example")
+    );
+
+</script>
+</body>
+</html>

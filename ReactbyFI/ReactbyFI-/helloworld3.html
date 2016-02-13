@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React!</title>
+  <script src="build/react.js"></script>
+  <script src="build/react-dom.js"></script>
+  <script src="build/JSXTransformer.js"></script>
+
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>-->
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+  var testb = 10;
+
+
+  var Helloworld =React.createClass({
+
+          render: function (){
+
+            return(
+     <h1>Hello World!!!{testb}</h1>
+
+    );
+  }
+  });
+
+  React.render(
+
+          <Helloworld />,
+          document.getElementById("example")
+  );
+
+</script>
+
+<!--<script type="text/babel" src="helloworld.jsx"  ></script>-->
+
+</body>
+</html>
