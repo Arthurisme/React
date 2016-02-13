@@ -19040,15 +19040,21 @@ var List = React.createClass({
     displayName: 'List',
 
     render: function () {
-        var listItems = ingredients.map(function (item) {
-            return React.createElement(ListItem, { key: item.id, ingredient: item.text });
-        });
+
+        var createItem = function (text, index) {
+            return React.createElement(ListItem, { key: index + text, text: text });
+        };
 
         return React.createElement(
             'ul',
             null,
-            listItems
+            this.props.items.map(createItem)
         );
+
+        {/*        var listItems = ingredients.map(function(item) {
+                       return <ListItem key={item.id} ingredient={item.text} />;
+                   });
+                    return (<ul>{listItems}</ul>);*/}
     }
 });
 
